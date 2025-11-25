@@ -1,6 +1,13 @@
 {
   "configurations": [
     {
+      "type": "java",
+      "name": "Hello",
+      "request": "launch",
+      "mainClass": "Hello",
+      "projectName": "2025-2nd-OI_a6a31946"
+    },
+    {
       "MIMode": "gdb",
       "args": [],
       "cwd": "${fileDirname}",
