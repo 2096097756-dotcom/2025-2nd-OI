@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int dx[8]={-1,-2,-2,1,1,2,2,-1};
+int dy[8]={2,1,-1,-2,2,-1,1,-2};
+
+int n,m,start_x,start_y;
+vector<vector<int>> ans;
+
+vector<vector<int>> bfs(int start_x,int start_y){
+    vector<vector<int>> chess(n+1,vector<int>(m+1,-1));
+    queue<pair<int,int>> q;
+    
+    q.push({start_x,start_y});
+    chess[start_x][start_y]=0;
+
+    while(!q.empty()){
+        pair<int,int> current=q.front();
+        q.pop();
+        int row=current.first;
+        int col=current.second;
+
+        int cnt=chess[row][col];
+
+        for(int i=0;i<8;i++){
+            int current_row=row+dx[i];
+            int current_col=col+dy[i];
+
+            if(current_row<=n&&current_row>=1&&current_col<=m&&current_col>=1){
+                if(chess[current_row][current_col]==-1){
+                    chess[current_row][current_col]=cnt+1;
+                    q.push({current_row,current_col});
+                }
+            }
+        }
+
+    }
+
+    return chess;
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    cin>>n>>m>>start_x>>start_y;
+    ans=bfs(start_x,start_y);
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            cout<<ans[i][j]<<((j==m)?"":" ");
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
