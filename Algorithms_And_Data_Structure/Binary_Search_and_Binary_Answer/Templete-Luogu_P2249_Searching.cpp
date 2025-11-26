@@ -63,3 +63,18 @@ int main(){
     }
     return 0;
 }
+/*
+用gemini给出的方法写:
+int ans;//注意ans定义在循环的外面.
+while(left<=right){
+    int mid=left+(right-left)/2;
+    long long sum=count(mid);
+    if(sum>=m){//题目所给的条件,就是找符合要求的至少得到m的树木
+        ans=mid;//这个时候mid就符合要求，记录下来
+        left=mid+1;//往右边搜索,找到最大的索引
+    }else{
+        right=mid-1;//往左边搜索，不记录不符合要求的ans
+    }
+}
+    [left=mid+1,right=mid-1,mid]索引,只有这样才能出现right<left的余地!
+*/
