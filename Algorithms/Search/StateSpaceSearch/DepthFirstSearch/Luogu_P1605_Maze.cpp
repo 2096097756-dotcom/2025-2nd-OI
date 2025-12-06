@@ -1,3 +1,4 @@
+//LuoguP1605
 #include<bits/stdc++.h>
 using namespace std;
 const int MAXN=1e6+1;
@@ -31,7 +32,9 @@ void input(){
     cin.tie(0);
 
     cin>>N>>M>>T;
-    cin>>SX>>SY>>FX>>FY;
+    cin>>SX>>SY>>FX>>FY;//起点没有标记!
+    if_visit[SX][SY]=1;
+
     for(int i=1;i<=T;i++) cin>>mazeBarrier[i].x>>mazeBarrier[i].y;
 
 }
