@@ -31,7 +31,7 @@ struct student *getData_ByPointer(struct student *s) {
 // ========================================================
 struct student *getData_ByMalloc() {
     // 1. 在堆(Heap)上申请一块内存
-    struct student *temp = (struct student *)malloc(sizeof(struct student));
+    struct student *temp = (struct student *)malloc(sizeof(struct student));//地址
     
     // 检查申请是否成功
     if (temp == NULL) {
@@ -42,7 +42,7 @@ struct student *getData_ByMalloc() {
     temp->sno = 2;
     
     // 注意：字符串数组不能直接用 = 赋值，必须用 strcpy
-    strcpy(temp->sname, "kingzong"); 
+    strcpy(temp->sname, "kingzong"); //目标字符串,源字符串
     
     temp->gpa = 4.0;
 
