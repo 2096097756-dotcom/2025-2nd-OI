@@ -43,7 +43,7 @@ void insertTail(Node<T>*& head, T val) {
     while (p->next != nullptr) { // 走到最后一个节点
         p = p->next;
     }
-    p->next = new Node<T>(val); // 接在最后
+    p->next = new Node<T>(val); 
 }
 
 // [删] 删除值为 val 的第一个节点

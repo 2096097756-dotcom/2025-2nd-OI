@@ -8,7 +8,10 @@ typedef struct STEvent {
   char content[200];    // 大事件内容
   struct STEvent* next; // 指针域，指向下一个节点
 } EventNode, *EventList,eventlist[1000];//这里是定义了一个链表，指向第一个元素
+/*
 
+所有都为形参！不是实参！
+*/
 //在注意：这里不能动头节点！头节点内容是垃圾值，只能动下一个数据节点！
 // 1. 初始化带头节点的链表
 void InitEventList(EventList *L) {
