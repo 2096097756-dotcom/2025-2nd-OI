@@ -9,6 +9,10 @@ typedef struct STEvent {
   struct STEvent* next; // 指针域，指向下一个节点
 } EventNode, *EventList,eventlist[1000];//这里是定义了一个链表，指向第一个元素
 /*
+注意这里需要用到typedef取别名，struct Node是完整的姓名
+注意这里在C++中直接写Node就可以了。但是起不到*Envent List作用
+*/
+/*
 
 所有都为形参！不是实参！
 */

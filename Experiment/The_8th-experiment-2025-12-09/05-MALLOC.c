@@ -25,10 +25,13 @@ char **createPointerArray(int n)
 {
     char **p;
     p=(char**)malloc(n*sizeof(char*));//列分配空间，注意这里应该分配的是指针空间
+    //指针类型 *变量名 = (指针类型*)malloc(数量 * sizeof(目标数据类型));分配的是指向内容的空间!
     for(int i=0;i<n;i++){
         *(p+i)=(char*)malloc(MAX*sizeof(char));
     }
     return p; 
+    //所以，分配内存时，永远看这个指针解引用一次后（*p）是什么类型，sizeof 里面就填什么类型，想要分配某一个类型，必须要一个更高级的指向它
+    //但是可以直接返回
 }
 
 void initArray(char **s, int n)
